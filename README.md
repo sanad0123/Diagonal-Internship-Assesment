@@ -1,10 +1,10 @@
-#Clone the Project
+##Clone the Project
 
 ```
 git clone https://github.com/sanad0123/Diagonal-Internship-Assesment.git
 ```
 
-#Install dependecies
+##Install dependecies
 
 ```
 npm install
@@ -14,8 +14,8 @@ npm install
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
-#Run the Project 
+##Run the Project 
 
 ```
-Npm start
+npm start
 ```
