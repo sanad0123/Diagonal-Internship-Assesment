@@ -1,5 +1,4 @@
 import './App.css';
-import Item from './Components/Item';
 import Base from './Components/Base';
 
 function App() {

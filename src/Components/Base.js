@@ -11,9 +11,9 @@ import Button from '@mui/material/Button';
 
 
 
-export default function SpanningTable() {
+export default function Base() {
   const [count1, setCount1] = useState(()=>{
-    const localCount =  JSON.parse(window.localStorage.getItem('count'));
+    const localCount =  JSON.parse(window.localStorage.getItem('count1'));
     return localCount ? localCount : 0;
   });
   const [count, setCount] = useState(() => {
@@ -26,27 +26,35 @@ export default function SpanningTable() {
   const [total, setTotal] = useState(0);
   const [pay, setPay] = useState(false);
 
+  const [order, setOrder] = useState([]);
+
+  
   useEffect(() => {
+    // if pay the amount is clicked
     if(pay)
     {
+      setPay(false);
       if(total<=0)
       alert("Select some item to buy.");
       else{
         setCount(0);
         setCount1(0);
-        setPay(false);
       }
     }
+
+  // if any item is selected  
   setAmount(count*price[0]);
   setAmount1(count1*price[1]);
   setTotal(amount+amount1);
   },[count,count1,amount,amount1,pay]);
 
+  // to retrive locally stored data
   useEffect(() => {
     setCount(JSON.parse(window.localStorage.getItem('count')));
     setCount1(JSON.parse(window.localStorage.getItem('count1')));
   }, []);
 
+  // to store data locally
   useEffect(() => {
     window.localStorage.setItem('count', count);
     window.localStorage.setItem('count1', count1);
@@ -83,8 +91,6 @@ export default function SpanningTable() {
                     {
                       setCount(count - 1);
                     }
-                    else
-                    alert("Quantity cannot be less than 0.");
                    
                   } }>
                     -
@@ -108,8 +114,6 @@ export default function SpanningTable() {
                     {
                       setCount1(count1 - 1);
                     }
-                    else
-                    alert("Quantity cannot be less than 0.");
                   } }>
                     -
                   </Button >

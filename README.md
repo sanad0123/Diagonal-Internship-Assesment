@@ -4,7 +4,7 @@
 git clone https://github.com/sanad0123/Diagonal-Internship-Assesment.git
 ```
 
-## Install dependecies
+## Install Dependencies
 
 ```
 npm install
